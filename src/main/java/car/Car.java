@@ -3,6 +3,7 @@ package car;
 import java.util.Objects;
 
 public class Car {
+	private static final char REPLACED_CHARACTER = '-';
 	private static final int MAX_LENGTH = 5;
 
 	private String name;
@@ -37,6 +38,21 @@ public class Car {
 
 	public int getDistance() {
 		return distance;
+	}
+
+	@Override
+	public String toString() {
+		return name + " : " + distanceToString(distance);
+	}
+
+	private String distanceToString(int distance) {
+		String result = "";
+
+		for (int i = 0; i < distance; i++) {
+			result += REPLACED_CHARACTER;
+		}
+
+		return result;
 	}
 
 }

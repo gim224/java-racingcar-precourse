@@ -16,8 +16,8 @@ public class PrintOutputManager implements OutputManager {
 	}
 
 	@Override
-	public void println(String contents) {
-		System.out.println(contents);
+	public void println(Object object) {
+		System.out.println(object);
 	}
 
 }

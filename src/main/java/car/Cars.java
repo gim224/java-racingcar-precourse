@@ -1,10 +1,14 @@
 package car;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
+import java.util.Set;
 
 import digit.RandomDigit;
+import ui.PrintOutputManager;
 
 public class Cars {
 	private static final String SPLIT_REGEX = ",";
@@ -13,7 +17,19 @@ public class Cars {
 
 	public Cars(String nameBundle) {
 		validateBlank(nameBundle);
-		this.cars = mapping(nameBundle);
+
+		String[] names = nameBundle.split(SPLIT_REGEX);
+		validateDuplication(names);
+
+		this.cars = mapping(names);
+	}
+
+	private void validateDuplication(String[] names) {
+		Set<String> nonDuplicate = new HashSet<>(Arrays.asList(names));
+		if (nonDuplicate.size() != names.length) {
+			throw new IllegalArgumentException("자동차 이름은 겹칠 수 없습니다.");
+		}
+
 	}
 
 	private void validateBlank(String nameBundle) {
@@ -22,8 +38,7 @@ public class Cars {
 		}
 	}
 
-	private List<Car> mapping(String nameBundle) {
-		String[] names = nameBundle.split(SPLIT_REGEX);
+	private List<Car> mapping(String[] names) {
 		List<Car> cars = new ArrayList<>();
 
 		for (String name : names) {
@@ -40,7 +55,10 @@ public class Cars {
 	public void moveAll(RandomDigit randomDigit) {
 		for (Car car : cars) {
 			car.move(randomDigit.shuffle());
+			PrintOutputManager.getInstance().println(car);
 		}
+
+		PrintOutputManager.getInstance().print("\n");
 	}
 
 }

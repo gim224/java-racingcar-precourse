@@ -1,6 +1,5 @@
 package game;
 
-import car.Car;
 import car.Cars;
 import digit.RandomDigit;
 import ui.InputManager;
@@ -31,20 +30,6 @@ public class Game {
 		for (int i = 0; i < input; i++) {
 			cars.moveAll(randomDigit);
 		}
-
-		for (Car car : cars.getCars()) {
-			System.out.println(car.getName() + " : " + print(car.getDistance()));
-		}
-	}
-
-	private String print(int distance) {
-		String result = "";
-
-		for (int i = 0; i < distance; i++) {
-			result += "-";
-		}
-
-		return result;
 	}
 
 }
