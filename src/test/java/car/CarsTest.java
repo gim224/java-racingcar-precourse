@@ -24,11 +24,11 @@ public class CarsTest {
 	void carNamesDuplication() {
 		assertThatIllegalArgumentException().isThrownBy(() -> {
 			new Cars("gt,gt,aa");
-		}).withMessage("자동차 이름은 겹칠 수 없습니다.");
+		}).withMessage("자동차들의 이름은 겹칠 수 없습니다.");
 
 		assertThatIllegalArgumentException().isThrownBy(() -> {
 			new Cars("aa,gt,aa");
-		}).withMessage("자동차 이름은 겹칠 수 없습니다.");
+		}).withMessage("자동차들의 이름은 겹칠 수 없습니다.");
 	}
 
 	@Test

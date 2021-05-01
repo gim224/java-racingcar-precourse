@@ -5,9 +5,9 @@ import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 public class ScannerInputManager implements InputManager {
-	private final OutputManager outputManager = PrintOutputManager.getInstance();
 	private static final String REQUIRE_REINPUT = "재입력 : ";
 
+	private final OutputManager outputManager = PrintOutputManager.getInstance();
 	private static InputManager inputManager = new ScannerInputManager();
 
 	private ScannerInputManager() {}
@@ -36,14 +36,14 @@ public class ScannerInputManager implements InputManager {
 	}
 
 	@Override
-	public String next() {
+	public String nextLine() {
 		String result = "";
 
 		try {
-			result = SCANNER.next();
+			result = SCANNER.nextLine();
 		} catch (NoSuchElementException | IllegalStateException e) {
 			requireReinput();
-			return next();
+			return nextLine();
 		}
 
 		return result;

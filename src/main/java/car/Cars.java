@@ -27,7 +27,7 @@ public class Cars {
 	private void validateDuplication(String[] names) {
 		Set<String> nonDuplicate = new HashSet<>(Arrays.asList(names));
 		if (nonDuplicate.size() != names.length) {
-			throw new IllegalArgumentException("자동차 이름은 겹칠 수 없습니다.");
+			throw new IllegalArgumentException("자동차들의 이름은 겹칠 수 없습니다.");
 		}
 
 	}
@@ -53,6 +53,8 @@ public class Cars {
 	}
 
 	public void moveAll(RandomDigit randomDigit) {
+		PrintOutputManager.getInstance();
+
 		for (Car car : cars) {
 			car.move(randomDigit.shuffle());
 			PrintOutputManager.getInstance().println(car);

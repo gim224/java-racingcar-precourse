@@ -1,7 +1,7 @@
 package ui;
 
 public interface InputManager {
-	String next();
+	String nextLine();
 
 	int nextInt();
 }
