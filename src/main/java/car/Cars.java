@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+import digit.RandomDigit;
+
 public class Cars {
 	private static final String SPLIT_REGEX = ",";
 
@@ -31,8 +33,10 @@ public class Cars {
 		return cars;
 	}
 
-	public List<Car> getCars() {
-		return cars;
+	public void moveAll(RandomDigit randomDigit) {
+		for (Car car : cars) {
+			car.move(randomDigit.shuffle());
+		}
 	}
 
 }
