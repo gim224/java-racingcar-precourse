@@ -33,6 +33,10 @@ public class Cars {
 		return cars;
 	}
 
+	public List<Car> getCars() {
+		return cars;
+	}
+
 	public void moveAll(RandomDigit randomDigit) {
 		for (Car car : cars) {
 			car.move(randomDigit.shuffle());
