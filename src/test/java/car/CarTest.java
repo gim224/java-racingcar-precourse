@@ -59,6 +59,6 @@ public class CarTest {
 	@Test
 	@DisplayName("Distance 리턴")
 	void getDistance() {
-		assertThat(car.getDistance()).isEqualByComparingTo(0);
+		assertThat(car.getDistance()).isEqualTo(0);
 	}
 }
