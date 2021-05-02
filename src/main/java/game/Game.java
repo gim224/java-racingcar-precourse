@@ -25,6 +25,7 @@ public class Game {
 
 		for (int i = 0; i < input; i++) {
 			cars.moveAll(randomDigit);
+			outputManager.println(cars);
 		}
 	}
 

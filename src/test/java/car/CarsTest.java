@@ -37,4 +37,13 @@ public class CarsTest {
 		assertThat(new Cars("gtkim")).isNotNull();
 		assertThat(new Cars("gtkim,abc,123,a, 테스트")).isNotNull();
 	}
+
+	@Test
+	@DisplayName("cars get(i) 검증")
+	void get() {
+		Cars cars = new Cars("gtkim,abc,123,a, 테스트");
+		assertThat(cars.get(0).getName()).isEqualTo("gtkim");
+		assertThat(cars.get(4).getName()).isEqualTo(" 테스트");
+	}
+
 }

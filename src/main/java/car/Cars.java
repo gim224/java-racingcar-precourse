@@ -8,7 +8,6 @@ import java.util.Objects;
 import java.util.Set;
 
 import digit.RandomDigit;
-import ui.PrintOutputManager;
 
 public class Cars {
 	private static final String SPLIT_REGEX = ",";
@@ -53,14 +52,25 @@ public class Cars {
 	}
 
 	public void moveAll(RandomDigit randomDigit) {
-		PrintOutputManager.getInstance();
-
 		for (Car car : cars) {
 			car.move(randomDigit.shuffle());
-			PrintOutputManager.getInstance().println(car);
+		}
+	}
+
+	public Car get(int index) {
+		return cars.get(index);
+	}
+
+	@Override
+	public String toString() {
+		String result = "";
+
+		for (Car car : cars) {
+			result += car.toString();
+			result += "\n";
 		}
 
-		PrintOutputManager.getInstance().print("\n");
+		return result;
 	}
 
 }
