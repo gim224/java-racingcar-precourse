@@ -2,6 +2,8 @@ package car;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
@@ -59,6 +61,14 @@ public class Cars {
 
 	public Car get(int index) {
 		return cars.get(index);
+	}
+
+	public int size() {
+		return cars.size();
+	}
+
+	public int calcMaxDistance() {
+		return Collections.max(cars, Comparator.comparingInt(Car::getDistance)).getDistance();
 	}
 
 	@Override

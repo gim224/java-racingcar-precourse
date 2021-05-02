@@ -46,4 +46,11 @@ public class CarsTest {
 		assertThat(cars.get(4).getName()).isEqualTo(" 테스트");
 	}
 
+	@Test
+	@DisplayName("cars get(i) 검증")
+	void size() {
+		Cars cars = new Cars("gtkim,abc,123,a, 테스트");
+		assertThat(cars.size()).isEqualTo(5);
+	}
+
 }
