@@ -42,10 +42,10 @@ public class Car {
 
 	@Override
 	public String toString() {
-		return name + " : " + distanceToString(distance);
+		return name + " : " + distanceToReplacedCharacter(distance);
 	}
 
-	private String distanceToString(int distance) {
+	private String distanceToReplacedCharacter(int distance) {
 		String result = "";
 
 		for (int i = 0; i < distance; i++) {
