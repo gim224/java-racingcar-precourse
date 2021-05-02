@@ -24,11 +24,17 @@
 >### 2. digit
 >  * 랜덤숫자 관련 패키지
 >  ```
->  ✔ RandomDigits ( 0에서 9 사이에서 random 값을 발생 )
+>  ✔ RandomDigits ( 0에서 9 사이에서 random 값을 발생; 발생한 random값에 따라 MoveStrategy 반환 )
 >  ```
 
 >### 3. game
 >  * 자동차 경주 게임 패키지
 >  ```
->  ✔ Game ( 게임 흐름 전개 )
+>  ✔ Game ( 게임 흐름 전개; user input 및 output 관리 )
+>  ```
+
+>### 4. judgment
+>  * 심판 패키지
+>  ```
+>  ✔ Judgment ( 게임 결과를 계산하는 책임 ) 
 >  ```
