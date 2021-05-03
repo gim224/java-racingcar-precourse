@@ -38,3 +38,9 @@
 >  ```
 >  ✔ Judgment ( 게임 결과를 계산하는 책임 ) 
 >  ```
+
+## 객체 관계도
+![image](https://user-images.githubusercontent.com/17541680/116882937-f9568680-ac5f-11eb-97fc-dc6e3fe0f62c.png)
+
+
+
